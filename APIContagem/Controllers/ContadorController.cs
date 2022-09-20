@@ -27,16 +27,13 @@ public class ContadorController : ControllerBase
         }
         logger.LogInformation($"Contador - Valor atual: {valorAtualContador}");
 
-        lock (_CONTADOR)
+        return new()
         {
-            return new()
-            {
-                ValorAtual = _CONTADOR.ValorAtual,
-                Local = _CONTADOR.Local,
-                Kernel = _CONTADOR.Kernel,
-                Saudacao = configuration["Saudacao"],
-                Framework = _CONTADOR.Framework
-            };
-        }
+            ValorAtual = _CONTADOR.ValorAtual,
+            Local = _CONTADOR.Local,
+            Kernel = _CONTADOR.Kernel,
+            Saudacao = configuration["Saudacao"],
+            Framework = _CONTADOR.Framework
+        };
     }
 }
