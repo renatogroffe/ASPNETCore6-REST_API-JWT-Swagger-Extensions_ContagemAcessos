@@ -51,7 +51,6 @@ app.UseHttpsRedirection();
 // Criação de estruturas, usuários e permissões
 // na base do ASP.NET Identity Core (caso ainda não
 // existam)
-//var identityInitializer = app.Services.GetRequiredService<IdentityInitializer>();
 using var scope = app.Services.CreateScope();
 scope.ServiceProvider.GetRequiredService<IdentityInitializer>().Initialize();
 
